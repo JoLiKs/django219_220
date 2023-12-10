@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+<button class="btn btn-danger">Danger</button>
+    <br>
+    <input name="name">
+    </form>
+    {% include "base2.html" %}
+    <div class="div1">
+    {% include "reg.html" %}
+    </div>
+     <div class="div2">
+    {% include "reg.html" %}
+    </div>
+
+{% endblock content %}

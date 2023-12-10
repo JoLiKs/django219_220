@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block index %}
+<style>
+    body {
+        background: rgb(90, 150, 160);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    form a {
+        margin-bottom: 20px;
+    }
+    .ko {
+        width: 240px;
+    }
+</style>
+    <img src="{% static "images/img.jpg" %}">
+<form action="" method="post" enctype="multipart/form-data">
+    <a class="btn btn-success ko" href="/registration">Регистрация</a>
+    <a class="btn btn-info ko" href="/login">Авторизация</a>
+    {{ form.as_p }}
+    {{ img_obj }}
+    <button id="btn_start_bot"><a href="https://t.me/Kritosvape_bot">Start bot</a></button>
+</form>
+<script>
+    btn_start_bot.onlclick = (e) => {
+        alert("s")
+        let xhr = new XMLHttpRequest()
+        xhr.open('post', 'http://localhost:8000/index/')
+        xhr.send('start')
+    }
+</script>
+{% endblock %}
